@@ -1,7 +1,6 @@
 const express = require('express')
 const bodyparser = require('body-parser')
 const path = require('path')
-
 const app = express()
 
 app.set('views', path.join(__dirname, 'views'))
@@ -11,8 +10,8 @@ app.use(bodyparser.json())
 
 app.engine('jsx', require('express-react-views').createEngine())
 
-// require('./routes/apiRoutes')(app)
 require('./routes/htmlRoutes')(app)
+require('./routes/bookRoutes')(app)
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 6969
 app.listen(PORT, _ => console.log(`http://localhost:${PORT}`))
