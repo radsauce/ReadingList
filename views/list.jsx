@@ -15,9 +15,12 @@ const List = props => {
         {props.list.map(book =>
           <Book title={book.title} author={book.author} pages={book.pages} cpage={book.cpage} isRead={book.isRead} />
         )}
-        
+
       </div>
+      <script src="/list.js"></script>
     </body>
     </html>
   </Fragment>
 }
+
+module.exports = List
